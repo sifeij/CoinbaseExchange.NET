@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CoinbaseExchange.NET.Core
+﻿namespace CoinbaseExchange.NET.Core
 {
     public abstract class ExchangePageableRequestBase : ExchangeRequestBase
     {

@@ -1,10 +1,7 @@
 ﻿using CoinbaseExchange.NET.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CoinbaseExchange.NET.Core
 {
@@ -18,7 +15,7 @@ namespace CoinbaseExchange.NET.Core
 
 	public class CBAuthenticationContainer
 	{
-		private readonly string Secret;
+		private readonly string _secret;
 		public string ApiKey { get; private set; }
 		public string Passphrase { get; private set; }
 
@@ -33,18 +30,18 @@ namespace CoinbaseExchange.NET.Core
 			if (String.IsNullOrWhiteSpace(secret))
 				throw new ArgumentNullException("secret", "A secret is required to use the coinbase API");
 
-			this.ApiKey = apiKey;
-			this.Passphrase = passphrase;
-			this.Secret = secret;
+			ApiKey = apiKey;
+			Passphrase = passphrase;
+			_secret = secret;
 		}
 
 		public SignatureBlock ComputeSignature(string relativeUrl, string method, string body)
 		{
 			var timeStamp = TimeStamp;
-			byte[] data = Convert.FromBase64String(this.Secret);
+			byte[] data = Convert.FromBase64String(this._secret);
 			var prehash = timeStamp + method + relativeUrl + body;
-			return new SignatureBlock()
-					{
+			return new SignatureBlock
+			{
 						ApiKey = ApiKey, Passphrase = Passphrase,
 						TimeStamp = timeStamp,
 						Signature = HashString(prehash, data)

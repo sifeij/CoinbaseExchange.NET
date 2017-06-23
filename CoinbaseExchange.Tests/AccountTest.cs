@@ -1,10 +1,6 @@
-﻿using System;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CoinbaseExchange.NET.Endpoints.Account;
-using CoinbaseExchange.NET;
 using CoinbaseExchange.NET.Core;
-using System.Collections.Generic;
 
 namespace CoinbaseExchange.Tests
 {

@@ -1,11 +1,8 @@
 ﻿using CoinbaseExchange.NET.Core;
-using CoinbaseExchange.NET.Endpoints.PersonalOrders;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using VSLee.Utils;
 using VSLee.Utils.ExchangeBase;
